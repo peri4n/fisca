@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="/assets/javascripts/jquery-1.9.0.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<button type="button" , id="button">Click Me!</button>
+<div id="app"></div>
+<script type="text/javascript">
+    $(function () {
+        $('#button').click(function () {
+            $.get("tickers", function (data) {
+                console.log("Success");
+                $('#app').append("<p>" + data + "</p>");
+            })
+                .done(function () {
+                })
+                .fail(function () {
+                })
+                .always(function () {
+                });
+//            $.get(
+//                'tickers',
+//                function (data) {
+//
+//                },
+//                function () {
+//                    console.log("Failure");
+//                });
+        })
+    });
+</script>
+</body>
+</html>
