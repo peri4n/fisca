@@ -5,6 +5,7 @@
 # Home page
 GET     /                           controllers.Assets.at(path="/public", file="html/index.html")
 
+GET     /quotes/:ticker             controllers.QuotesController.get(ticker: String, start: Option[String])
 GET     /tickers                    controllers.TickerController.list
 
 # Map static resources from the /public folder to the /assets URL path
